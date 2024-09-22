@@ -12,7 +12,7 @@ function App() {
     // only valid if the input is not a white space
     if (input.trim()) {
       setBlessing([...currentBlessing, input]);
-      setInput('testing input');
+      setInput('');
     }
   };
 
@@ -32,7 +32,14 @@ function App() {
       />
 
       <button onClick={addBlessing}>Add</button>
-
+      <ul>
+        {currentBlessing.map((blessing, index) => (
+          <li key={index}>
+            {blessing}
+            <button onClick={() => removeBlessing(index)}>Remove</button>
+          </li>
+        ))}
+      </ul>
     </div>  
   );
 }
