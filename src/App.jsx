@@ -4,46 +4,37 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
- 
+
+  const [currentBlessing, setBlessing] = useState([]);
+  const [input, setInput] = useState('ok');
+
+  const addBlessing = () => {
+    // only valid if the input is not a white space
+    if (input.trim()) {
+      setBlessing([...currentBlessing, input]);
+      setInput('testing input');
+    }
+  };
+
+  const removeBlessing = (index) => {
+    const updatedBlessings = currentBlessing.filter((_,i) => i !== index);
+    setBlessing(updatedBlessings);
+  };
 
   return (
-    <>
-      <div>
-   
-      </div>
+    <div>
+      <h1>DAILY BLESSING TRACKER</h1>
+      <input
+        type="text"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        placeholder="I am grateful for"
+      />
 
-      <h1>HELLO WORLD :)</h1>
+      <button onClick={addBlessing}>Add</button>
 
-      
-    </>
-  )
+    </div>  
+  );
 }
 
 export default App
-
-
-
-
-// return (
-//   <>
-//     <div>
-//       <a href="https://vitejs.dev" target="_blank">
-//         <img src={viteLogo} className="logo" alt="Vite logo" />
-//       </a>
-//       <a href="https://react.dev" target="_blank">
-//         <img src={reactLogo} className="logo react" alt="React logo" />
-//       </a>
-//     </div>
-//     <h1>HELLO WORLD :)</h1>
-//     <div className="card">
-//       <button onClick={() => setCount((count) => count + 1)}>
-//         count is {count}
-//       </button>
-//       <p>
-//         Edit <code>src/App.jsx</code> and save to test HMR
-//       </p>
-//     </div>
-//     <p className="read-the-docs">
-//       Click on the Vite and React logos to learn more
-//     </p>
-//   </>
