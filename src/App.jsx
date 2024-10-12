@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div>
-      <h1>DAILY BLESSING TRACKER</h1>
+      <h1>GRATEFULNESS TRACKER</h1>
       <input
         type="text"
         value={input}

@@ -7,6 +7,7 @@ function Grateful() {
       <h2>My son being alive</h2>
       <h2>My mother</h2>
       <h2>I laughed today</h2>
+      <h2>I had delicious food</h2>
     </>
   );
 }
